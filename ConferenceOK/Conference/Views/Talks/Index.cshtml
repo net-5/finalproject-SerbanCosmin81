@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Conference.Domain.Entities.Talks>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<link rel="text/css" href="~/css/StyleSponsorIndex.css" />
+<div class="sponsorbanner">
+    <div class="main-title">We are delighted to announce our TALKS:</div>
+    @foreach (var item in Model)
+    {
+<div class="container-fluid">
+    
+    <div class="sponsorname">@item.Speaker.Name</div>
+   
+    <div class="sponsordescription"> @item.Name</div>
+    <div class="sponsordescription"> @item.Description</div>
+    <div class="sponsordescription">In The @item.Edition Edition</div>
+   
+</div>
+    }
+</div>

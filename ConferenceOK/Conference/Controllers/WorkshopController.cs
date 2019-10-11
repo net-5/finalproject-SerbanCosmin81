@@ -1,0 +1,100 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Conference.Models;
+using Conference.Domain.Entities;
+using Conference.Service;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Omu.ValueInjecter;
+
+namespace Conference.Controllers
+{
+
+    
+    public class WorkshopController : Controller
+    {
+
+
+        private readonly IWorkShopService workShopService;
+        private readonly ISpeakerService speakerService;
+
+        public WorkshopController(IWorkShopService workShopService,ISpeakerService speakerService)
+        {
+            this.workShopService = workShopService;
+            this.speakerService = speakerService;
+        }
+        
+        // GET: Workshop
+        public ActionResult Index()
+        {
+            var getAllWorkshops = workShopService.GetAllWorkshops();
+            return View(getAllWorkshops);
+        }
+
+        // GET: Workshop/Details/5
+        public ActionResult Details(int id)
+        {
+            var getWorkshopById = workShopService.GetWorkshopsById(id);
+            WorkshopViewModel model = new WorkshopViewModel();
+            model.InjectFrom(getWorkshopById);
+
+            return View(model);
+        }
+
+        // GET: Workshop/Create
+        public ActionResult Create()
+        {
+            
+
+            return View();
+        }
+
+        // POST: Workshop/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(WorkshopViewModel model)
+        {
+            
+                
+        return View();
+            
+        }
+
+        // GET: Workshop/Edit/5
+        public ActionResult Edit(int id)
+        {
+            
+            return View();
+        }
+
+        // POST: Workshop/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, WorkshopViewModel model)
+        {
+            
+           return View();
+            
+
+        }
+
+            // GET: Workshop/Delete/5
+            public ActionResult Delete(int id)
+        {
+            
+
+            return View();
+        }
+
+        // POST: Workshop/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int id, WorkshopViewModel model)
+        {
+
+            return View();
+        }
+    }
+}

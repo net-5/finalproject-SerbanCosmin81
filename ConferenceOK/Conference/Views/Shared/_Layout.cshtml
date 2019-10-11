@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Conference</title>
+
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <link rel="stylesheet" href="~/css/styleHome.css"/>
+    <link rel="stylesheet" href="~/css/StyleSponsorIndex.css"/>
+
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"xxxxxxxxx
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+    </environment>
+</head>
+<body>
+    <header>
+        
+            <nav class="navbar navbar-expand-md navbar-light bg-white">
+                <div class="container-fluid">
+                    <a href="#" class="navbar-brand">
+                        <img src="~/images/DotnetTecnologies.png" class="dotnet">
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav">
+                            <a href="http://localhost:50576/" class="nav-item nav-link active">Home</a>
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown">Editions</a>
+                                <div class="dropdown-menu">
+
+                                    <a href="http://localhost:50576/Editions" class="dropdown-item">.NET Edition 2019</a>
+                                </div>
+                            </div>
+                            <a class="nav-item nav-link" asp-controller="Speakers" asp-action="Index">Speakers</a>
+                            <a href="http://localhost:50576/Sponsor" class="nav-item nav-link active">Sponsors</a>
+                            <a href="http://localhost:50576/Talks" class="nav-item nav-link active">Talks</a>
+                            @*<a href="http://localhost:50576/Workshop" class="nav-item nav-link active">Workshops</a>*@
+                            <div class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown">LOGIN LIKE ADMIN</a>
+                                <div class="dropdown-menu">
+                                    <a href="http://localhost:50576/Admin/Editions" class="dropdown-item">Edit Editions</a>
+                                    <a href="http://localhost:50576/Admin/Sponsor" class="dropdown-item">Edit Sponsors</a>
+                                    <a href="http://localhost:50576/Admin/Talks" class="dropdown-item">Edit Talks</a>
+                                    <a href="http://localhost:50576/Admin/Workshop" class="dropdown-item">Edit Workshops</a>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <ul class="menu-socials">
+                            <li class="nav-item">
+                                <a class="btn-facebook btn-social-icon btn" href="https://www.facebook.com/"> <i class="fa-facebook fa"></i> </a>
+                                <a class="btn-twitter btn-social-icon btn" href="https://www.twitter.com/"> <i class="fa-twitter fa"></i> </a>
+                                <a class="btn-linkedin btn-social-icon btn" href="https://www.linkedin.com/"> <i class="fa-google fa"></i> </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        
+    </header>
+    
+     @RenderBody()
+       
+<footer>
+      <div class="container pb-3">
+        <div class="row">
+            <div class="about col-xs-12 col-md-4">
+                <ul>
+                    <li>
+                        <a href="/2020/About">About</a>
+                    </li>
+                    <li>
+                        <a href="mailto:info@google.com">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="/Privacy">Privacy</a>
+                    </li>
+                    <li>
+                        <a href="">Terms &amp; Conditions</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="text-right col-xs-12">© 2019 - by SerCos Dev</div>
+        </div>
+
+    </div>
+</footer>
+
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery"
+                crossorigin="anonymous"
+                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+                crossorigin="anonymous"
+                integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
+        </script>
+    </environment>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

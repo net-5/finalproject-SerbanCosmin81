@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="jumbotron-fluid">
+    <img class="banner" src="~/images/backGround new.jpeg" />
+    <div class="text-center">
+        <p id="demo"></p>
+        <h1 class="year">2019</h1>
+        <h3 class="location">12 October 2019 |Iasi, Romania</h3>
+        <div class="btns-container">
+            <a href="https://www.meetup.ro/" target="_blank" class="btn btn-large btn-main">Register</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row-parent alert-danger">
+        <p class="announcement">Stay Tuned for a Major Announcement!<p>
+    </div>
+</div>
+<div id="newsletter">
+    
+    <div class="newsletter">
+        <div class="col-md-4 offset-md-0 col-sm-12 offset-sm-0">
+            <span class="title white float-right ">Watch out!</span>
+
+        </div>
+        
+        <div class="col-md-6 col-sm-12">
+            <div class="inputs">
+                <input type="email" class="float-left col-sm-12 col-md-6 transparent" id="Email" name="Email" value="" placeholder="Email address*">
+                <span id="result" class="white" style="display: none;">Please check your email to confirm subscription!</span>
+                <button onclick="subscribe();" class="col-sm-12 col-md-6 btn btn-primary btn-small">Newsletter Registration</button>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</div>
+
